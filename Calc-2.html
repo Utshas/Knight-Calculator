@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Normal Calculator</title>
+    <style>
+	body{background-color:#ddd}
+	form{margin:120px 35%;}
+        table{background-color: #111; padding:8px 5px; transition: box-shadow 0.8s;}
+        table:hover{ box-shadow: 8px 8px 8px #666;}
+        td{border: 2px solid #444;}
+        td:hover{background-color: #666;color:#fff;}
+        th{color:#eee; font-size:22px;}
+        button{width:100%; padding:10px; transition: background-color 0.5s,color 0.5s;}
+        button:hover{background-color: #444444; color:#ffffff;}
+        #display{text-align: right; padding:10px;}
+    </style>
+</head>
+<body><form name="calc">
+<table onmouseover="myScript()">
+    <tr><th colspan="4" id="head">Knight Calculator</th></tr>
+    <tr>
+        <td colspan="3">
+    <input type="text" id="display" name="display" placeholder="0">
+        </td>
+        <td>
+    <button type="button" value="&larr;" onclick="calc.display.value=calc.display.value.substr(0,calc.display.value.length-1)">&larr;</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button type="button" onclick="calc.display.value+=0"> 0 </button>
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+=1"> 1 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+=2"> 2 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+='+'"> + </button>
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            <button type="button" onclick="calc.display.value+=3"> 3 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+=4"> 4 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+=5"> 5 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+='-'"> - </button>
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            <button type="button" onclick="calc.display.value+=6"> 6 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+=7"> 7 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+=8"> 8 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+='*'"> * </button>
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            <button type="button" onclick="calc.display.value+=9"> 9 </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value=''"> C </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calculate()"> = </button>
+
+        </td>
+        <td>
+            <button type="button" onclick="calc.display.value+='/'"> / </button>
+
+        </td>
+
+    </tr>
+</table>
+</form>
+
+
+<script>
+function calculate(){
+    if(calc.display.value!='')
+        {calc.display.value= eval(calc.display.value);}
+	
+    else
+        calc.display.value= '0';
+}
+i=150;
+j=150;
+k=245;
+function myScript(){
+i=i+2;j=j+3;k++;
+if(i>200) i=160;
+if(j>200) j=160;
+if(k>256) k=250;
+
+	document.getElementById("head").style.color="rgb("+i+","+j+","+k+")";
+}
+</script>
+</body>
+</html>
